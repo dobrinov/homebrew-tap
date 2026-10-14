@@ -1,33 +1,41 @@
 class Schema < Formula
   desc "Interactive ER diagrams and visual git diffs for Postgres structure.sql files"
   homepage "https://github.com/dobrinov/schema"
-  version "0.7.0"
+  version "0.7.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/dobrinov/schema/releases/download/v0.7.0/schema-0.7.0-macos-arm64.tar.gz"
-      sha256 "b20b63b0f336d428a8504f4b668f8729094110c9c85a3aa18465eae0f54b398b"
+      url "https://github.com/dobrinov/schema/releases/download/v0.7.1/schema-0.7.1-macos-arm64.tar.gz"
+      sha256 "34887f659cbd3fbab82e79c3d2583770af979095fab3867f1f32613eecf511d6"
     end
     on_intel do
-      url "https://github.com/dobrinov/schema/releases/download/v0.7.0/schema-0.7.0-macos-x86_64.tar.gz"
-      sha256 "38e4527d808c907aa12d94e1d21cca53eb96f7a26fa719b068338038fe5e9cd9"
+      url "https://github.com/dobrinov/schema/releases/download/v0.7.1/schema-0.7.1-macos-x86_64.tar.gz"
+      sha256 "8de18baf71659222178d74488321e0b3eac053e6ddc2c8d646585789310078e9"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dobrinov/schema/releases/download/v0.7.0/schema-0.7.0-linux-arm64.tar.gz"
-      sha256 "4a491126bbc7a28677e2a49f937048473a0003dc1b877a6ce7c5e6cbe682c2c8"
+      url "https://github.com/dobrinov/schema/releases/download/v0.7.1/schema-0.7.1-linux-arm64.tar.gz"
+      sha256 "b4e27aca6bba1d5e65428b9d6ab21de3f300470cf69a18160d554f78c32a9ffb"
     end
     on_intel do
-      url "https://github.com/dobrinov/schema/releases/download/v0.7.0/schema-0.7.0-linux-x86_64.tar.gz"
-      sha256 "2907b33a4bd122be0bbe93a579e5a38e738d09ce1284c9e9253fcb31def9720d"
+      url "https://github.com/dobrinov/schema/releases/download/v0.7.1/schema-0.7.1-linux-x86_64.tar.gz"
+      sha256 "5d8ad4bfe30524381b659e1aecd75bf9deacc2957ecf2fbf89ff643f543d876a"
     end
   end
 
   def install
     bin.install "schema"
+  end
+
+  def caveats
+    <<~TXT
+      If you installed schema's agent skills (schema skills install),
+      bring them up to date with this version:
+        schema skills refresh
+    TXT
   end
 
   test do
