@@ -1,28 +1,28 @@
 class Schema < Formula
   desc "Interactive ER diagrams and visual git diffs for Postgres structure.sql files"
   homepage "https://github.com/dobrinov/schema"
-  version "0.7.2"
+  version "0.7.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/dobrinov/schema/releases/download/v0.7.2/schema-0.7.2-macos-arm64.tar.gz"
-      sha256 "2c6e34b11e501eefa0ce5749106e2244f661ec914b829704ffcc3080f52a65fb"
+      url "https://github.com/dobrinov/schema/releases/download/v0.7.3/schema-0.7.3-macos-arm64.tar.gz"
+      sha256 "694ac72915be870cd24761403b3808eb52e43ea0839133d7d5368ca22a4a7479"
     end
     on_intel do
-      url "https://github.com/dobrinov/schema/releases/download/v0.7.2/schema-0.7.2-macos-x86_64.tar.gz"
-      sha256 "6820db604a55b24c51327aa0a23dce3b010b68f9b3513c598a0fb2668564f397"
+      url "https://github.com/dobrinov/schema/releases/download/v0.7.3/schema-0.7.3-macos-x86_64.tar.gz"
+      sha256 "87f4cb83b17edc55e662f17950a5335762b6d26ed80d46fc38fb52f97834ce74"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dobrinov/schema/releases/download/v0.7.2/schema-0.7.2-linux-arm64.tar.gz"
-      sha256 "ba7269c007aaac98ea58093e4836f5e2a1dc498a93a2e0aad3c7bc0273bb95f4"
+      url "https://github.com/dobrinov/schema/releases/download/v0.7.3/schema-0.7.3-linux-arm64.tar.gz"
+      sha256 "c60549f12356d0792652ce7dbf50598751ad56babbc3dca0560aa64579b53deb"
     end
     on_intel do
-      url "https://github.com/dobrinov/schema/releases/download/v0.7.2/schema-0.7.2-linux-x86_64.tar.gz"
-      sha256 "51eedd43157de618feed325fef64505b71d91af217845adc8204209500713d0e"
+      url "https://github.com/dobrinov/schema/releases/download/v0.7.3/schema-0.7.3-linux-x86_64.tar.gz"
+      sha256 "4cc56fed3870c5d372a4ad404d22c6efd8e4d4c283f544fcdfebbb558f4d29c1"
     end
   end
 
