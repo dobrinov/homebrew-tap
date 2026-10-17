@@ -16,7 +16,15 @@ def get(url):
     with urllib.request.urlopen(req) as r:
         return r.read().decode()
 
-rel = json.loads(get(f"https://api.github.com/repos/dobrinov/{name}/releases/latest"))
+# the highest version, not GitHub's "latest" (the release created last,
+# which is not the newest when two tags are built at once)
+def key(r):
+    return tuple(int(p) if p.isdigit() else 0 for p in r["tag_name"].lstrip("v").split(".")[:3])
+releases = [r for r in json.loads(get(f"https://api.github.com/repos/dobrinov/{name}/releases?per_page=30"))
+            if not r["draft"] and not r["prerelease"]]
+if not releases:
+    sys.exit(f"{name}: no releases")
+rel = max(releases, key=key)
 version = rel["tag_name"].lstrip("v")
 sums_url = next((a["browser_download_url"] for a in rel["assets"] if a["name"] == "SHA256SUMS"), None)
 if not sums_url:
