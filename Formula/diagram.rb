@@ -1,28 +1,28 @@
 class Diagram < Formula
   desc "FigJam-style boards as plain text: mindmaps, kanban, gantt, sequence and ER diagrams"
   homepage "https://github.com/dobrinov/diagram"
-  version "0.31.0"
+  version "0.34.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/dobrinov/diagram/releases/download/v0.31.0/diagram-0.31.0-macos-arm64.tar.gz"
-      sha256 "288e8bed21774f370e3db3d2b3d2284e15d3fbed73c5ae9b45ac411fce302179"
+      url "https://github.com/dobrinov/diagram/releases/download/v0.34.0/diagram-0.34.0-macos-arm64.tar.gz"
+      sha256 "711be5b6609fbec8042a8e8941783f44a2d66e9e4e8d63c01cc42152d045ff5c"
     end
     on_intel do
-      url "https://github.com/dobrinov/diagram/releases/download/v0.31.0/diagram-0.31.0-macos-x86_64.tar.gz"
-      sha256 "bb71a6285b9e0b701d1b3169a08da5034db87a06fbd5cd11b0463c8598c559c7"
+      url "https://github.com/dobrinov/diagram/releases/download/v0.34.0/diagram-0.34.0-macos-x86_64.tar.gz"
+      sha256 "f7ddcd9eabf40f334e312baabcfef07d935666fbd3ac8b1871f79fdab24561ce"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dobrinov/diagram/releases/download/v0.31.0/diagram-0.31.0-linux-arm64.tar.gz"
-      sha256 "568137bdb364fd270a7cdb425d3e0d89e0d6bf7df98b62c3a18f944a629ec02d"
+      url "https://github.com/dobrinov/diagram/releases/download/v0.34.0/diagram-0.34.0-linux-arm64.tar.gz"
+      sha256 "fb264e78ef5f14700b12a56be3e5ff4d200975717264ddbebfcd6f515717d99d"
     end
     on_intel do
-      url "https://github.com/dobrinov/diagram/releases/download/v0.31.0/diagram-0.31.0-linux-x86_64.tar.gz"
-      sha256 "eb4c37313ae99f83af21724b97149136e462936c2f3db99fca5f5368d5909727"
+      url "https://github.com/dobrinov/diagram/releases/download/v0.34.0/diagram-0.34.0-linux-x86_64.tar.gz"
+      sha256 "7e65ef4bb42175ba9aad02845ecfb57c061bdb184e000d0d917341d480a66c23"
     end
   end
 
@@ -32,6 +32,7 @@ class Diagram < Formula
 
   def caveats
     <<~TXT
+      Own file icons, and open boards from Finder: diagram install-app
       Agent skills for Claude Code: diagram skills install
       Merge boards element by element in a repository: diagram merge --install
     TXT
