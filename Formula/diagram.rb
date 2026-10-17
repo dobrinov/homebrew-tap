@@ -1,28 +1,28 @@
 class Diagram < Formula
   desc "FigJam-style boards as plain text: mindmaps, kanban, gantt, sequence and ER diagrams"
   homepage "https://github.com/dobrinov/diagram"
-  version "0.35.0"
+  version "0.36.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/dobrinov/diagram/releases/download/v0.35.0/diagram-0.35.0-macos-arm64.tar.gz"
-      sha256 "cd6ad9fc37a2c30fe79edc41c4a2c47a9a56a6970612a52538db3a75d2d98530"
+      url "https://github.com/dobrinov/diagram/releases/download/v0.36.0/diagram-0.36.0-macos-arm64.tar.gz"
+      sha256 "11f7a80eab8f95da682a8bec1d5db43f74dae3e2e3446e605e858b3e2da8c176"
     end
     on_intel do
-      url "https://github.com/dobrinov/diagram/releases/download/v0.35.0/diagram-0.35.0-macos-x86_64.tar.gz"
-      sha256 "e31db4be9849e22e5b21139d2ab7a5518d6ac87ab7deeddc2f602832a74a6c01"
+      url "https://github.com/dobrinov/diagram/releases/download/v0.36.0/diagram-0.36.0-macos-x86_64.tar.gz"
+      sha256 "eb3e22a9631108f6e43f4573ae3739e936ff535de45e9202dc19e7dd05937257"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dobrinov/diagram/releases/download/v0.35.0/diagram-0.35.0-linux-arm64.tar.gz"
-      sha256 "05f5ce13d826209c14304d354221971d4b314235a824042afb2b321c995efee0"
+      url "https://github.com/dobrinov/diagram/releases/download/v0.36.0/diagram-0.36.0-linux-arm64.tar.gz"
+      sha256 "decb53771bcea1b7aa3dc2d6744ed9004cc7ff5e0605b04f467a29126d4d5f57"
     end
     on_intel do
-      url "https://github.com/dobrinov/diagram/releases/download/v0.35.0/diagram-0.35.0-linux-x86_64.tar.gz"
-      sha256 "8f43745571ff47aef266b433ddf6a35976eaff1f10ec35b77a78ebcd37685c1c"
+      url "https://github.com/dobrinov/diagram/releases/download/v0.36.0/diagram-0.36.0-linux-x86_64.tar.gz"
+      sha256 "a722f4e1dba95457474ddfb4637174c244ad0507725cdd7c011e062521f350e6"
     end
   end
 
