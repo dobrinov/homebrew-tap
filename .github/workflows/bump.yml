@@ -1,0 +1,31 @@
+# Keeps the formulae at their latest release. It runs here, with this
+# repository's own token, so the projects need no secret to update the tap.
+name: Bump formulae
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # hourly
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bump
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bump diagram
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/bump.py diagram
+      - name: Commit
+        run: |
+          git add Formula
+          if git diff --cached --quiet; then echo "nothing to bump"; exit 0; fi
+          version=$(sed -n 's/^ *version "\(.*\)"/\1/p' Formula/diagram.rb)
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "diagram v${version}"
+          git push
