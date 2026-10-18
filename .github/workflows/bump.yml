@@ -18,14 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Bump diagram
+      - name: Bump shape
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 .github/scripts/bump.py diagram
+        run: python3 .github/scripts/bump.py shape
       - name: Commit
         run: |
           git add Formula
           if git diff --cached --quiet; then echo "nothing to bump"; exit 0; fi
-          version=$(sed -n 's/^ *version "\(.*\)"/\1/p' Formula/diagram.rb)
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "diagram v${version}"
+          version=$(sed -n 's/^ *version "\(.*\)"/\1/p' Formula/shape.rb)
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "shape v${version}"
           git push
