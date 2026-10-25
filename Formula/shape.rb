@@ -1,28 +1,28 @@
 class Shape < Formula
   desc "One board for the whole project, as text, with your AI: plans, wireframes, slides"
   homepage "https://github.com/dobrinov/shape"
-  version "0.80.0"
+  version "0.80.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/dobrinov/shape/releases/download/v0.80.0/shape-0.80.0-macos-arm64.tar.gz"
-      sha256 "80d402061a4ae2fb7715d7afaf8fb44a24fb275b1768f13ef2385680e97ee0bf"
+      url "https://github.com/dobrinov/shape/releases/download/v0.80.1/shape-0.80.1-macos-arm64.tar.gz"
+      sha256 "9524494142a47c47a411f11848f8f0515363f3207d22e341bf6bef7686861565"
     end
     on_intel do
-      url "https://github.com/dobrinov/shape/releases/download/v0.80.0/shape-0.80.0-macos-x86_64.tar.gz"
-      sha256 "938a181144d5097e34888648b03581a87c38c9081519a893de0c6d544e83aa4d"
+      url "https://github.com/dobrinov/shape/releases/download/v0.80.1/shape-0.80.1-macos-x86_64.tar.gz"
+      sha256 "8b8275a91096ac8f4230c050918fc2e1caf5c542aec82b755d6646fce2f8129b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dobrinov/shape/releases/download/v0.80.0/shape-0.80.0-linux-arm64.tar.gz"
-      sha256 "7f48baaf186f43362f36fa78059c4a165fa1972855fe10519d10c282de4d0cb2"
+      url "https://github.com/dobrinov/shape/releases/download/v0.80.1/shape-0.80.1-linux-arm64.tar.gz"
+      sha256 "f8b1d2c3d9110b8801d8db3b3ca3ab98d61a0fcb942d43f591133fa1c96562df"
     end
     on_intel do
-      url "https://github.com/dobrinov/shape/releases/download/v0.80.0/shape-0.80.0-linux-x86_64.tar.gz"
-      sha256 "2be8b91962c33454f6ce710ce54aa8f3ef55e2ee390ae9dce8401252190b3878"
+      url "https://github.com/dobrinov/shape/releases/download/v0.80.1/shape-0.80.1-linux-x86_64.tar.gz"
+      sha256 "82273b0b417a5ea88873208665bfdaf48d48e963d71f15f01e0b46542a7cb57f"
     end
   end
 
