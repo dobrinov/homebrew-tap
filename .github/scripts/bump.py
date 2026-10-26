@@ -1,13 +1,15 @@
-"""Bring Formula/<name>.rb up to the latest release of dobrinov/<name>.
+"""Bring Formula/<name>.rb (or, with --cask, Casks/<name>.rb) up to the
+latest release of dobrinov/<name>.
 
-The formula's URLs and checksums are rewritten from the release's
-SHA256SUMS; everything else in it (desc, caveats, test) stays as written.
-Usage: python3 bump.py NAME   (GITHUB_TOKEN raises the API rate limit)
+The URLs and checksums are rewritten from the release's SHA256SUMS;
+everything else (desc, caveats, test) stays as written.
+Usage: python3 bump.py NAME [--cask]   (GITHUB_TOKEN raises the API rate limit)
 """
 import json, os, re, sys, urllib.request
 
 name = sys.argv[1]
-path = f"Formula/{name}.rb"
+cask = "--cask" in sys.argv[2:]
+path = f"Casks/{name}.rb" if cask else f"Formula/{name}.rb"
 
 def get(url):
     req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json"})
@@ -48,6 +50,13 @@ def url_and_sum(m):
     if file not in sums:
         sys.exit(f"{name} {version}: {file} is not in SHA256SUMS")
     return f'{m.group(1)}url "{url}"{m.group(3)}sha256 "{sums[file]}"'
-new = re.sub(r'(\s*)url "([^"]+)"(\s+)sha256 "[0-9a-f]+"', url_and_sum, new)
+if cask:
+    # one sha256 before a url that names the version as #{version}
+    file = re.search(r'^\s*url "([^"]+)"', new, re.M).group(1).rsplit("/", 1)[1]
+    if file not in sums:
+        sys.exit(f"{name} {version}: {file} is not in SHA256SUMS")
+    new = re.sub(r'sha256 "[0-9a-f]+"', f'sha256 "{sums[file]}"', new, count=1)
+else:
+    new = re.sub(r'(\s*)url "([^"]+)"(\s+)sha256 "[0-9a-f]+"', url_and_sum, new)
 open(path, "w").write(new)
 print(f"{name}: {current} → {version}")

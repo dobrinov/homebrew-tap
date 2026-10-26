@@ -21,10 +21,12 @@ jobs:
       - name: Bump shape
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 .github/scripts/bump.py shape
+        run: |
+          python3 .github/scripts/bump.py shape
+          python3 .github/scripts/bump.py shape --cask
       - name: Commit
         run: |
-          git add Formula
+          git add Formula Casks
           if git diff --cached --quiet; then echo "nothing to bump"; exit 0; fi
           version=$(sed -n 's/^ *version "\(.*\)"/\1/p' Formula/shape.rb)
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "shape v${version}"
