@@ -7,7 +7,7 @@ cask "shape" do
   desc "One board for the whole project, as text, with your AI"
   homepage "https://github.com/dobrinov/shape"
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "Shape.app"
 
